@@ -1,5 +1,7 @@
-//Simon Oh
 //Implement Conway's Game of Life
+//Simon Oh
+//ho587
+//CS2124 Spring 2019
 
 #include <iostream>
 #include <fstream>
@@ -10,8 +12,8 @@ using namespace std;
 
 void fillVec(ifstream& file);
 vector<string> initialize(string line);
-void gameOfLife(vector<vector<string>> cells);
-void display(vector<vector<string>> cells);
+void gameOfLife(vector<vector<string> > cells);
+void display(vector<vector<string> > cells);
 
 void open() {
 	ifstream textFile("life.txt");
@@ -23,7 +25,7 @@ void open() {
 }
 
 void fillVec(ifstream& file) {
-	vector<vector<string>> cells;
+	vector<vector<string> > cells;
 	string line;
 	vector<string> emptyLine;
 	getline(file, line);
@@ -53,10 +55,10 @@ vector<string> initialize(string line) {
 	return lineVec;
 }
 
-void gameOfLife(vector<vector<string>> cells) {
+void gameOfLife(vector<vector<string> > cells) {
 	int liveNeighbors;
 	for (size_t i = 0; i < 10; ++i) {
-		vector<vector<string>> newCells = cells;
+		vector<vector<string> > newCells = cells;
 		for (size_t j = 1; j < cells.size() - 1; ++j) {
 			for (size_t k = 1; k < cells[j].size() - 1; ++k) {
 				if (cells[j - 1][k - 1] == "*") {
@@ -104,7 +106,7 @@ void gameOfLife(vector<vector<string>> cells) {
 	}
 }
 
-void display(vector<vector<string>> cells) {
+void display(vector<vector<string> > cells) {
 	for (size_t i = 1; i < cells.size() - 1; ++i) {
 		for (size_t j = 1; j < cells[i].size() - 1; ++j) {
 			cout << cells[i][j];

@@ -1,5 +1,8 @@
-//Simon Oh
+//Encapsulation and data hiding
 //Minesweeper game
+//Simon Oh
+//ho587
+//CS2124 Spring 2019
 
 #include <iostream>
 #include <fstream>
